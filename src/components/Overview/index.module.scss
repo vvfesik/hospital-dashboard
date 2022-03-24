@@ -1,0 +1,51 @@
+@value tablet from 'src/index.module.css';
+
+.overview {
+  border-radius: 1.25rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--color-background-brand);
+  background-image: url(assets/doctors.png);
+  background-position-x: right;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  @media tablet {
+    background-size: contain;
+  }
+  address {
+    color: var(--color-content-action);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  li {
+    display: inline-flex;
+    align-items: center;
+    padding-right: 2rem;
+    margin-bottom: 1rem;
+    @media tablet {
+      margin-bottom: 0;
+    }
+    i {
+      margin-right: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: var(--color-content-action);
+      svg {
+        padding: 0.75rem;
+        fill: var(--color-content-negative);
+      }
+    }
+    dt {
+      font-weight: 500;
+      font-size: 0.75rem;
+    }
+    dd {
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin-top: 0.5rem;
+    }
+  }
+}

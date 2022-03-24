@@ -1,0 +1,116 @@
+@value tablet: (min-width: 768px);
+@value laptop: (min-width: 1024px);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	margin: 0;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+	color: var(--color-content-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+img {
+	max-width: 100%;
+}
+
+dl, dd {
+	margin: 0;
+}
+
+h2 {
+	font-size: 1.375rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+:root {
+	font-size: 16px;
+	--app-height: 100vh;
+	--app-nav-width: 230px;
+	--app-padding: 1.5rem;
+	--app-flex-gap: 0.75rem;
+	--color-content-primary: #2E2C49;
+	--color-content-action: #58598C;
+	--color-content-secondary: #9796A4;
+	--color-content-negative: #FFFFFF;
+	--color-content-tertiary: #B9B2DE;
+	--color-content-inactive: #DEDEE8;
+	--color-background-primary: #FFFFFF;
+	--color-background-secondary: #FBFBFB;
+	--color-background-negative: #7467BF;
+	--color-background-brand: #D8F6FF;
+	--color-background-accent: #FFF1DA;
+	--color-border-primary: #DEDEE8;
+	--color-border-inactive: #F8F8F9;
+	--color-border-negative: #7467BF;
+	--color-border-accent: #FFF1DA;
+}
+
+@media laptop {
+  :root {
+		--app-nav-width: 300px;
+		--app-padding: 2.5rem;
+  }
+}

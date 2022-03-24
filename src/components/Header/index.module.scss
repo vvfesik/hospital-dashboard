@@ -1,0 +1,116 @@
+@value tablet from 'src/index.module.css';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+
+  @media tablet {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  form {
+    position: relative;
+    width: 100%;
+
+    @media tablet {
+      width: 50%;
+    }
+
+    i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 2.75rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      svg {
+        fill: var(--color-content-action);
+        width: 1.25rem;
+        padding: 0.25rem;
+      }
+    }
+  }
+  .searchInput {
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0px 4px 6px var(--color-content-inactive);
+      border-radius: 2rem;
+      opacity: 0;
+      transition: all .3s ease;
+      pointer-events: none;
+    }
+    &:focus-within::after {
+      opacity: 1;
+    }
+  }
+  input {
+    padding: 0.7rem 3.5rem 0.7rem 2rem;
+    border-radius: 2rem;
+    font-size: 14px;
+    color: var(--color-content-primary);
+    border: 1px solid var(--color-border-inactive);
+    outline: none;
+    width: 100%;
+    &::placeholder {
+      color: var(--color-content-inactive);
+      opacity: 1;
+    }
+    &:hover, &:focus, &:focus-visible {
+      border-color: var(--color-border-primary);
+    }
+  }
+}
+
+.actionIcons {
+  align-self: flex-end;
+  margin: 0.4rem 0 1.8rem;
+  i {
+    display: inline-block;
+    position: relative;
+    margin-left: 1rem;
+    svg {
+      position: relative;
+      width: 1.5rem;
+      fill: var(--color-content-primary);
+      cursor: pointer;
+      padding: 0;
+    }
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--color-background-brand);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    &:hover {
+      &::before {
+        content: '';
+        opacity: 1;
+        transform: scale(1.65);
+      }
+    }
+  }
+
+  @media tablet {
+    margin: 0;
+    align-self: auto;
+  }
+}

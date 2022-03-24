@@ -1,0 +1,65 @@
+@value tablet from 'src/index.module.css';
+
+.appContainer {
+  margin: 0 auto;
+  min-height: var(--app-height);
+  display: flex;
+  background-color: var(--color-background-primary);
+}
+
+.appNav {
+  background-color: var(--color-background-secondary);
+  overflow: hidden;
+  width: calc(var(--app-padding) * 2 + 1rem);
+  position: fixed;
+  z-index: 2;
+  padding: var(--app-padding) calc(var(--app-padding)/2);
+
+  &:hover {
+    width: var(--app-nav-width);
+    + main::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      background-color: var(--color-content-primary);
+      z-index: 1;
+      opacity: 0.8;
+    }
+    > div {
+      opacity: 1;
+    }
+  }
+
+  @media tablet {
+    width: var(--app-nav-width);
+    padding: var(--app-padding);
+    position: relative;
+    &:hover {
+      width: var(--app-nav-width);
+      + main::before {
+        content: none;
+      }
+      > div {
+        opacity: unset;
+      }
+    }
+  }
+}
+
+.appMain {
+  padding: var(--app-padding);
+  flex: 1;
+  margin-left: calc(var(--app-padding) * 2 + 1rem);
+
+  @media tablet {
+    margin-left: 0;
+  }
+
+  section {
+    margin-top: 2rem;
+  }
+}
